@@ -47,7 +47,7 @@ def create_item():
         print("Error occurred:", str(e))  # Logs to console
         return jsonify({
             "gen_res": str(e)
-        }), 50
+        }), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
