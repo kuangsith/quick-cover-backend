@@ -18,12 +18,15 @@ CORS(app)
 @app.route('/test', methods=['POST'])
 def create_item():
     try:
-        pdf_file = request.files['file']
-        json_data = json.loads(request.form['json'])
+        job_title = request.form.get('job_title')
+        company_name = request.form.get('company_name')
+        
+        # Access uploaded file (resume)
+        pdf_file = request.files.get('file')
 
         prompt = (
-            f"Based on my resume, Create a basic cover letter for role {json_data['job_title']} "
-            f"at {json_data['company_name']}. Jump right into the content. No 'Dear Hiring Manager'. "
+            f"Based on my resume, Create a basic cover letter for role {job_title} "
+            f"at {company_name}. Jump right into the content. No 'Dear Hiring Manager'. "
             f"No 'Okay, here is the draft of the cover letter'"
         )
 
