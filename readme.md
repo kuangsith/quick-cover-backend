@@ -31,5 +31,5 @@
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/quickcover-backend.git
-cd quickcover-backend
+git clone https://github.com/kuangsith/quick-cover-backend.git
+cd quick-cover-backend
