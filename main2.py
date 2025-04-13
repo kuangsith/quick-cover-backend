@@ -20,6 +20,7 @@ def create_item():
     try:
         job_title = request.form.get('job_title')
         company_name = request.form.get('company_name')
+        job_description = request.form.get('job_description')
         
         # Access uploaded file (resume)
         pdf_file = request.files.get('file')
@@ -28,6 +29,7 @@ def create_item():
             f"Based on my resume, Create a basic cover letter for role {job_title} "
             f"at {company_name}. Jump right into the content. No 'Dear Hiring Manager'. "
             f"No 'Okay, here is the draft of the cover letter'"
+            f"job description is as follows :{job_description}"
         )
 
         response = client.models.generate_content(
