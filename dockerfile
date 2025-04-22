@@ -18,6 +18,7 @@ RUN apt-get install libgomp1
 
 # Copy the current directory contents into the container
 COPY main2.py .
+COPY config.py .
 COPY .env .
 
 # Make port 8080 available to the world outside this container
